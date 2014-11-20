@@ -1,0 +1,125 @@
+;option.s
+
+#define _ISR_STARTADDRESS     0x0c7fff00
+
+
+I_ISPR	     EQU	0x01e00020
+
+;Fout = (8 + M_DIV) * Fin / [(2 + P_DIV) * (2 ^ S_DIV)]
+M_DIV	DEFINE      0x34      ;Fin=8MHz Fout=50MHz
+P_DIV	DEFINE      3
+S_DIV	DEFINE      1
+
+;**********Memory Controller Parameters**********
+
+;Bank 0 parameter
+B0_Tacs		DEFINE	0x0	;0clk
+B0_Tcos		DEFINE	0x0	;0clk
+B0_Tacc		DEFINE	0x3	;4clk
+B0_Tcoh		DEFINE	0x0	;0clk
+B0_Tah		DEFINE	0x0	;0clk
+B0_Tacp		DEFINE	0x0	;2clk
+B0_PMC		DEFINE	0x0	;normal(1 data)
+
+;Bank 1 parameter
+B1_Tacs		DEFINE	0x0	;0clk
+B1_Tcos		DEFINE	0x2	;2clk
+B1_Tacc		DEFINE	0x3	;4clk
+B1_Tcoh		DEFINE	0x2	;2clk
+B1_Tah		DEFINE	0x0	;0clk
+B1_Tacp		DEFINE	0x0	;2clk
+B1_PMC		DEFINE	0x0	;normal(1 data)
+
+;Bank 2 parameter
+B2_Tacs		DEFINE	0x3	;4clk
+B2_Tcos		DEFINE	0x3	;4clk
+B2_Tacc		DEFINE	0x7	;14clk
+B2_Tcoh		DEFINE	0x3	;4clk
+B2_Tah		DEFINE	0x3	;4clk
+B2_Tacp		DEFINE	0x3	;6clk
+B2_PMC		DEFINE	0x0	;normal(1 data)
+
+;Bank 3 parameter
+B3_Tacs		DEFINE	0x3	;4clk
+B3_Tcos		DEFINE	0x3	;4clk
+B3_Tacc		DEFINE	0x7	;14clk
+B3_Tcoh		DEFINE	0x3	;4clk
+B3_Tah		DEFINE	0x3	;4clk
+B3_Tacp		DEFINE	0x3	;6clk
+B3_PMC		DEFINE	0x0	;normal(1 data)
+
+;Bank 4 parameter
+B4_Tacs		DEFINE	0x0	;0clk
+B4_Tcos		DEFINE	0x0	;0clk
+B4_Tacc		DEFINE	0x4	;6clk
+B4_Tcoh		DEFINE	0x2	;2clk
+B4_Tah		DEFINE	0x0	;0clk
+B4_Tacp		DEFINE	0x0	;2clk
+B4_PMC		DEFINE	0x0	;normal(1 data)
+
+;Bank 5 parameter
+B5_Tacs		DEFINE	0x0	;0clk
+B5_Tcos		DEFINE	0x0	;0clk
+B5_Tacc		DEFINE	0x4	;6clk
+B5_Tcoh		DEFINE	0x2	;2clk
+B5_Tah		DEFINE	0x0	;0clk
+B5_Tacp		DEFINE	0x0	;2clk
+B5_PMC		DEFINE	0x0	;normal(1 data)
+
+;Bank 6 parameter
+B6_MT		DEFINE	0x3	;SDRAM
+B6_Trcd		DEFINE	0x0	;2clk
+B6_SCAN		DEFINE	0x1	;9bit
+
+;Bank 7 parameter
+B7_MT		DEFINE	0x3	;SDRAM
+B7_Trcd		DEFINE	0x0	;2clk
+B7_SCAN		DEFINE	0x1	;9bit
+
+;REFRESH parameter
+REFEN		DEFINE	0x1	    ;refresh enable
+TREFMD		DEFINE	0x0	    ;CBR(CAS before RAS)/auto refresh
+Trp			DEFINE	0x0	    ;2clk
+Trc			DEFINE	0x1	    ;5clk
+Tchr		DEFINE	0x2	    ;3clk
+REFCNT		DEFINE	1659    ;period=7.8125us, MCLK=50MHz, REFCNT = 2048 + 1 - MCLK(MHz) * 7.8125
+
+
+; ISR Vector
+HandleReset    EQU _ISR_STARTADDRESS
+HandleUndef    EQU _ISR_STARTADDRESS + 0x04
+HandleSWI      EQU _ISR_STARTADDRESS + 0x08
+HandlePabort   EQU _ISR_STARTADDRESS + 0x0c
+HandleDabort   EQU _ISR_STARTADDRESS + 0x10
+HandleReserved EQU _ISR_STARTADDRESS + 0x14
+HandleIRQ      EQU _ISR_STARTADDRESS + 0x18
+HandleFIQ      EQU _ISR_STARTADDRESS + 0x1c
+HandleADC      EQU _ISR_STARTADDRESS + 0x20
+HandleRTC      EQU _ISR_STARTADDRESS + 0x24
+HandleUTXD1    EQU _ISR_STARTADDRESS + 0x28
+HandleUTXD0    EQU _ISR_STARTADDRESS + 0x2c
+HandleSIO      EQU _ISR_STARTADDRESS + 0x30
+HandleIIC      EQU _ISR_STARTADDRESS + 0x34
+HandleURXD1    EQU _ISR_STARTADDRESS + 0x38
+HandleURXD0    EQU _ISR_STARTADDRESS + 0x3c
+HandleTIMER5   EQU _ISR_STARTADDRESS + 0x40
+HandleTIMER4   EQU _ISR_STARTADDRESS + 0x44
+HandleTIMER3   EQU _ISR_STARTADDRESS + 0x48
+HandleTIMER2   EQU _ISR_STARTADDRESS + 0x4c
+HandleTIMER1   EQU _ISR_STARTADDRESS + 0x50
+HandleTIMER0   EQU _ISR_STARTADDRESS + 0x54
+HandleUERR01   EQU _ISR_STARTADDRESS + 0x58
+HandleWDT      EQU _ISR_STARTADDRESS + 0x5c
+HandleBDMA1    EQU _ISR_STARTADDRESS + 0x60
+HandleBDMA0    EQU _ISR_STARTADDRESS + 0x64
+HandleZDMA1    EQU _ISR_STARTADDRESS + 0x68
+HandleZDMA0    EQU _ISR_STARTADDRESS + 0x6c
+HandleTICK     EQU _ISR_STARTADDRESS + 0x70
+HandleEINT4567 EQU _ISR_STARTADDRESS + 0x74
+HandleEINT3    EQU _ISR_STARTADDRESS + 0x78
+HandleEINT2    EQU _ISR_STARTADDRESS + 0x7c
+HandleEINT1    EQU _ISR_STARTADDRESS + 0x80
+HandleEINT0    EQU _ISR_STARTADDRESS + 0x84
+
+
+;end of option.s
