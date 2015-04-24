@@ -12,4 +12,10 @@ Keygen6.40.exe
 4.源码中需要debug处已用  " //<------------- " 格式注释  
 
 
+##运行IAR
+- 1. 打开一个工程 
+![open](http://img5.douban.com/view/photo/photo/public/p2240044626.jpg)  
+
+
+
 
