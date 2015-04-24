@@ -34,7 +34,7 @@ Keygen6.40.exe
 
 - 6.用J-link将开发板和电脑连接      
 
-- 7. 依次点击右上侧菜单中的**Make**和**Download and Debugge**编译和刷写程序到开发板   
+- 7.依次点击右上侧菜单中的**Make**和**Download and Debugge**编译和刷写程序到开发板   
 
 ![m](http://img3.douban.com/view/photo/photo/public/p2239702970.jpg) 
 
