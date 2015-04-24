@@ -13,7 +13,7 @@ Keygen6.40.exe
 
 
 ##运行IAR
-- 1. 打开一个工程
+- 1.打开一个工程
 在菜单栏中 File->open->Workspace     
 ![open](http://img5.douban.com/view/photo/photo/public/p2240044626.jpg)  
 选中工程文件    
