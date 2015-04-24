@@ -1,5 +1,6 @@
 嵌入式实验代码样例
 ===============
+####注意：当提示更新J-link驱动时 务必选【否】 
 
 1.IAR下载:
 http://files.iar.com/ftp/pub/box/CD-EWARM-6301-3142.zip
@@ -62,7 +63,7 @@ Keygen6.40.exe
 
 
 
-- 9.注意：当提示更新J-link驱动时 务必选【否】 
+
 
 
 
