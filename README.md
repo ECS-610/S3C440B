@@ -38,7 +38,7 @@ Keygen6.40.exe
 ![m](http://img3.douban.com/view/photo/photo/public/p2239702970.jpg)  
 ![d](http://img3.douban.com/view/photo/photo/public/p2239702974.jpg)   
 
-- 8.点击左上侧的控制按钮运行代码 分别有进入函数 单步运行 顺序运行等
+- 8.点击左上侧的控制按钮运行代码 分别有进入函数 单步运行 顺序运行等    
 ![ctl](http://img5.douban.com/view/photo/photo/public/p2239702966.jpg)  
 
 
