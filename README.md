@@ -25,8 +25,9 @@ LCD源码中包含汉字库
  
 - 16x16矩阵的显示原理：        
 显示的像素点为1 不显示的像素点为0        
-故每行得到诸如0xab  0xcd的原始值 存在自定义数组或头文件中
-!(self)[http://img4.douban.com/view/photo/photo/public/p2245431907.jpg]   
+故每行得到诸如0xab  0xcd的原始值 存在自定义数组或头文件中 
+**不一定要修改16*16字库 自己在程序中定义即可**
+![self](http://img4.douban.com/view/photo/photo/public/p2245431907.jpg)       
 
 
 先用memcpy()取字模   
