@@ -30,7 +30,7 @@ LCD源码中包含汉字库 可以在16x16的像素点阵上显示一个字符�
 显示的像素点为1 不显示的像素点为0   
 故每行得到诸如0xabcd的原始值 存在数组或头文件中   
 再用lcd_put_pixel()函数显示到LCD上  
-![16*16](http://img3.douban.com/view/photo/large/public/p2245282224.jpg)   
+![16*16](http://img3.douban.com/view/photo/photo/public/p2245282224.jpg)   
 
 
 
