@@ -25,15 +25,26 @@ LCD源码中包含汉字库
  
 - 16x16矩阵的显示原理：        
 显示的像素点为1 不显示的像素点为0        
-故每行得到诸如0xabcd的原始值 存在数组或头文件中         
-再用lcd_put_pixel()函数显示到LCD上     
+故每行得到诸如0xab  0xcd的原始值 存在自定义数组或头文件中
+!(self)[http://img4.douban.com/view/photo/photo/public/p2245431907.jpg]   
+
+
+先用memcpy()取字模   
+再用lcd_put_pixel()函数显示到LCD上  
+![1](http://img4.douban.com/view/photo/photo/public/p2245433288.jpg)  
 
 - 8x8显示原理：
   为了在原本显示一个字符的区域内显示更多字符 需要自定义数组 如下图示：  
 ![16*16](http://img3.douban.com/view/photo/photo/public/p2245282224.jpg)       
 
-- 在configure.h中去掉相关的注释   
+- 在configure.h中去掉显示字符或图像相关的注释  **每次编译只能去掉一个注释**  
 - ![undefine](http://img4.douban.com/view/photo/photo/public/p2245287617.jpg)  
+
+
+
+实验结果:
+
+![11](http://img4.douban.com/view/photo/photo/public/p2245431908.jpg)   
 
 
 
